@@ -1,6 +1,6 @@
 package garageTask;
 
-public class Vehicle {
+public abstract class Vehicle {
 
         public int id;
         public String color;

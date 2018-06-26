@@ -3,7 +3,7 @@ package garageTask;
 import java.util.ArrayList;
 public class Garage {
     private static ArrayList<Vehicle> garage = new ArrayList(); // arraylist of each vehicle created/instantiated
-
+    private static ArrayList<Vehicle> tempList = new ArrayList(); //temp list for solving the remove function problem
     /*public static void garageBill(){
         int totalBill = 0;
 
@@ -23,16 +23,16 @@ public class Garage {
                 System.out.println("Your total bill is " + totalBill);
         }
     }*/
-    void printGarage(){
+    public void printGarage(){
         for (Vehicle v : garage){
             System.out.println("ID: " + v.id + "\nColor: " + v.color + "\nNo. of Wheels: " + v.numWheels + "\n");
         }
     }
-    void addGarage(Vehicle vehicle){ //Function which takes parameter of object type vehicle and adds it to garage array list
+    public void addGarage(Vehicle vehicle){ //Function which takes parameter of object type vehicle and adds it to garage array list
         garage.add(vehicle);
     }
 
-    void garageBill2(){
+    public void garageBill2(){
         int totalBill = 0;
 
         for (Vehicle v : garage){
@@ -50,16 +50,17 @@ public class Garage {
         }
     }
 
-    void removeFromGarageByID(int id){
+    public void removeGarageByID(int id){
         for (Vehicle v : garage){
             if (v.id == id){
-                garage.remove(v);
-            }
+                tempList.add(v); //need to add to new list before removing. If remove step is here,
+            }                    // Concurrent Modification error occurs as you're trying to edit and delete in same step. Add to temp list and delete from that to solve
         }
+        garage.removeAll(tempList);
     }
 
-
-
-
-
+    public void clearGarage(){
+        garage.clear();
+        System.out.println("Your garage is empty.");
+    }
 }

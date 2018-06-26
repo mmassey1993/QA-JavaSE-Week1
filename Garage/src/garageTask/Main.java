@@ -24,8 +24,10 @@ public class Main {
         Lorry Iveco = new Lorry(6, "red", 14);
         garage.addGarage(Iveco);
 
+
         garage.garageBill2();
-        garage.removeFromGarageByID(3);
+        garage.removeGarageByID(5);
+        garage.clearGarage();
         garage.printGarage();
     }
 }
