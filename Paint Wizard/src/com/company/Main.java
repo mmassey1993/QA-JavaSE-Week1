@@ -8,7 +8,7 @@ public class Main {
         PaintManager averageJoes = new PaintManager("Average Joes", 15, (float) 17.99, 11);
         PaintManager DuluxourousPaints = new PaintManager("DuluxourousPaints", 10, (float) 25.00, 20);
 
-        PaintJob myRoom = new PaintJob(30);
-
+        //PaintJob myRoom = new PaintJob(30);
+        PaintJob.checkWastage(30);
     }
 }
