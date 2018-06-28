@@ -59,6 +59,32 @@ public class Garage {
         garage.removeAll(tempList);
     }
 
+    public void removeGarageByType(String type){
+        for (int i =0; i<garage.size()-1; i++){
+            Vehicle v = garage.get(i);
+            switch (type){
+                case ("Car"):
+                    if (v instanceof Car){
+                        garage.remove(v);
+                        i--;
+                    }
+                break;
+                case ("Motorcycle"):
+                    if (v instanceof Motorcycle){
+                        garage.remove(v);
+                        i--;
+                    }
+                    break;
+                case ("Lorry"):
+                    if (v instanceof Lorry){
+                        garage.remove(v);
+                        i--;
+                    }
+                    break;
+            }
+        }
+    }
+
     public void clearGarage(){
         garage.clear();
         System.out.println("Your garage is empty.");
