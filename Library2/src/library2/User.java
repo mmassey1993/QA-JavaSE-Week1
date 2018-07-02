@@ -38,26 +38,26 @@ public class User implements Listable{
 
     @Override
     public void checkInItem(Map m) {
-        mapList.add(m);
-        //Remove from item list
+        mapList.remove(m);
+        //Add to item list
     }
 
     @Override
     public void checkOutItem(Map m) {
-        mapList.remove(m);
-        //Add to item list;
+        mapList.add(m);
+        //Remove from item list;
     }
 
     @Override
     public void checkInItem(Newspaper n) {
-        newspaperList.add(n);
-        //Remove from item list
+        newspaperList.remove(n);
+        //Add to item list
     }
 
     @Override
     public void checkOutItem(Newspaper n) {
-        newspaperList.remove(n);
-        //Add to item list;
+        newspaperList.add(n);
+        //Remove from item list;
     }
 
     @Override
