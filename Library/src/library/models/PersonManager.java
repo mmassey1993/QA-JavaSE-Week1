@@ -16,13 +16,13 @@ public class PersonManager implements Manageable{
         personList.add((Person) c);
     }
 
-    @Override
-    public void update(int ID, Crudable c) {
-        int pos = ;
-            if (pos != null) {
-                pos.setName(((Person) c).getName());
-            }
-    }
+//    @Override
+//    public void update(int ID, Crudable c) {
+//        int pos = ;
+//            if (pos != null) {
+//                pos.setName(((Person) c).getName());
+//            }
+//    }
 
     @Override
     public void delete(int ID, Crudable c) {

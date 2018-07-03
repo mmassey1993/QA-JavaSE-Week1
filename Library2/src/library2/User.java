@@ -1,72 +1,27 @@
 package library2;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import java.util.ArrayList;
-import java.util.List;
 
-public class User implements Listable{
+public class User{
 
     private int ID;
     private String name;
-    public List<Book> bookList;
-    public List<Map> mapList;
-    public List<Newspaper> newspaperList;
+    private ArrayList<Item> itemList;
 
     public User(int ID, String name) {
         this.ID = ID;
         this.name = name;
-        bookList = new ArrayList<>();
-        mapList = new ArrayList<>();
-        newspaperList = new ArrayList<>();
+        setItemList(new ArrayList<>());
         UserManager.users.add(this);
     }
 
+//    @Override
+//    public String toString(){
+//        return "This user has the following items out: " + getItemList();
+//    }
 
-
-    @Override
-    public void checkOutItem(Book b) {
-        bookList.add(b);
-        //Remove from item list
-    }
-
-    @Override
-    public void checkInItem(Book b) {
-        bookList.remove(b);
-        //Add to item list;
-    }
-
-    @Override
-    public void checkInItem(Map m) {
-        mapList.remove(m);
-        //Add to item list
-    }
-
-    @Override
-    public void checkOutItem(Map m) {
-        mapList.add(m);
-        //Remove from item list;
-    }
-
-    @Override
-    public void checkInItem(Newspaper n) {
-        newspaperList.remove(n);
-        //Add to item list
-    }
-
-    @Override
-    public void checkOutItem(Newspaper n) {
-        newspaperList.add(n);
-        //Remove from item list;
-    }
-
-    @Override
-    public String toString(){
-        return "This user has these books out: " + bookList + "This user has these maps out: " + mapList + "This user has these newspapers out: " + newspaperList;
-    }
-
-    public String getItemList(){
-        return toString();
+    public ArrayList<Item> getItemList(){
+        return itemList;
     }
 
     public String getName() {
@@ -86,4 +41,7 @@ public class User implements Listable{
     }
 
 
+    public void setItemList(ArrayList<Item> itemList) {
+        this.itemList = itemList;
+    }
 }

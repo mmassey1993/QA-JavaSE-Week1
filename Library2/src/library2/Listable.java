@@ -1,17 +1,11 @@
 package library2;
 
+import java.util.List;
+
 public interface Listable {
 
-    void checkInItem(Book b);
+    List<Item> checkInItem(Item i);
 
-    void checkOutItem(Book b);
-
-    void checkInItem(Map m);
-
-    void checkOutItem(Map m);
-
-    void checkInItem(Newspaper n);
-
-    void checkOutItem(Newspaper n);
+    List<Item> checkOutItem(Item i);
 
 }

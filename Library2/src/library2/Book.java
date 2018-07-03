@@ -1,18 +1,33 @@
 package library2;
 
+import java.util.ArrayList;
+
 public class Book extends Item {
-    @Override
-    public void addItem() {
 
+    private String title;
+    private String author;
+
+
+
+    public Book(int itemID, String title, String author){
+        super(itemID);
+        this.title = title;
+        this.author = author;
     }
 
-    @Override
-    public void removeItem() {
-
+    public String getAuthor() {
+        return author;
     }
 
-    @Override
-    public void updateItem() {
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

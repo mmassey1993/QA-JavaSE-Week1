@@ -1,18 +1,21 @@
 package library2;
 
+import java.util.ArrayList;
+
 public class Map extends Item{
-    @Override
-    public void addItem() {
 
+    private String region;
+
+    public Map(int itemID, String region) {
+        super(itemID);
+        this.region = region;
     }
 
-    @Override
-    public void removeItem() {
-
+    public String getRegion() {
+        return region;
     }
 
-    @Override
-    public void updateItem() {
-
+    public void setRegion(String region) {
+        this.region = region;
     }
 }
